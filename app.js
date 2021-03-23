@@ -7,4 +7,5 @@ app.get("/", function(req, res){
 
 app.listen(3000, function(){
     console.log("The YelpCamp Server has started!");
+    console.log("Go to http://localhost:3000");
 });
