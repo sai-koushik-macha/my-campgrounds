@@ -1,13 +1,11 @@
 
-# YelpCamp
+# Add Mongoose
+* Install and configure mongoose
+* setup campground model
+* Use campground model inside of our rountes
 
-* Add Landing Page
-* Add Campground Page that lists all Campgrounds
-
-# Each Campground has:
-* Name
-* Image
-
-# Adding POST request for the Campground
-
-# Styling
+# Show Page
+* Review the RESTFUL rountes we've seen so far
+* Add description to our campground model
+* Show db.collection.drop()
+* Add a show route/template
