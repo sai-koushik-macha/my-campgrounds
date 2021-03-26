@@ -17,15 +17,16 @@ app.set("view engine", "ejs");
 // SCHEMA SETUP
 var campgroundSchema = new mongoose.Schema({
     name: String,
-    image: String
+    image: String,
+    description: String
 });
 
 var Campground = mongoose.model("Campground", campgroundSchema)
 
 // Campground.create({
-//     name: "Mountain Goat's", 
-//     image: "https://images.unsplash.com/photo-1521255450884-b3e8e92cd615?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGNhbXBncm91bmR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
-// 
+//     name: "Granite Hill", 
+//     image: "https://images.unsplash.com/photo-1521255450884-b3e8e92cd615?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGNhbXBncm91bmR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", 
+//     description: "This is a Huge granite hill, no bathrooms, no water. Beatiful Granite!"
 // }, function(err, campground){
 //     if(err){
 //         console.log(err);
@@ -40,23 +41,26 @@ app.get("/", function(req, res){
 });
 
 
-
+// INDEX - show all campgrounds
 app.get("/campgrounds", function (req, res) {
     // Get all campgrounds from DB
     Campground.find({}, function(err, allCampgrounds){
         if(err){
             console.log(err);
         }else{
-            res.render("campgrounds", {campgrounds: allCampgrounds});
+            res.render("index", {campgrounds: allCampgrounds});
         }
     });
 });
 
+
+// CREATE - add new campgrounds to DB
 app.post("/campgrounds", function (req, res) {
     // get data from form and add to campgrounds array
     var name = req.body.name;
     var image = req.body.image;
-    var newCampground = {name: name, image: image};
+    var description = req.body.description;
+    var newCampground = {name: name, image: image, description: description};
     // Create a new campground and save to DB
     Campground.create(newCampground, function(err, newlyCreated){
         if(err){
@@ -68,8 +72,24 @@ app.post("/campgrounds", function (req, res) {
     });
 });
 
+
+// NEW - show for to create new campground
 app.get("/campgrounds/new", function(req, res) {
    res.render("new.ejs"); 
+});
+
+
+// SHOW - shows more info about one campground
+app.get("/campgrounds/:id", function(req, res){
+    // Find the campground with provided id
+    Campground.findById(req.params.id, function(err, foundCampground){
+        if(err){
+            console.log(err);
+        }else{
+            // render show template with that campground
+            res.render("show", {campgrounds: foundCampground});
+        }
+    });
 });
 
 app.listen(3000, function(){
