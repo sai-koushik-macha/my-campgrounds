@@ -3,7 +3,10 @@ var app = express();
 var bodyPaser = require("body-parser");
 var mongoose = require("mongoose");
 var Campground = require("./models/campground");
+var seedDB     = require("./seeds");
 
+
+seedDB();
 // mongodb setup
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
