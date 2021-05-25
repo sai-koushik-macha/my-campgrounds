@@ -15,9 +15,13 @@
             </div>
             <div>
                 <ul class="nav justify-content-end">
-                    <li><button><a href="/login">Log in</a></li></button>
-                    <li><button><a href="/register">Sign Up</a></li></button>
-                    <li><button><a href="/logout">Log out</a></li></button>
+                    <% if(!currentUser) { %>
+                        <li><button><a href="/login">Log in</a></li></button>
+                        <li><button><a href="/register">Sign Up</a></li></button>
+                    <% } else { %>
+                        <li><a href="#">Signed In As <%= currentUser.username %></a></li>
+                        <li><button><a href="/logout">Log out</a></li></button>
+                    <% } %>
                 </ul>
             </div>
         </nav>

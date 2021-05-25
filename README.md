@@ -15,4 +15,6 @@
 * Add logout route
 * Prevent user from adding a comment if not signed in
 * Add link to navbar
+
+# Show/Hide Links
 * Show/hide auth links correctly
