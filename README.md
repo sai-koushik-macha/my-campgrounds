@@ -6,3 +6,7 @@
 * Configure Passport
 * Add register routes
 * Add register template
+
+# Login
+* Add login routes
+* Add login template
