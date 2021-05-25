@@ -1,11 +1,13 @@
-var express = require("express");
-var app = express();
-var bodyPaser = require("body-parser");
-var mongoose = require("mongoose");
-var Campground = require("./models/campground");
-var Comment    = require("./models/comment");
-var seedDB     = require("./seeds");
-
+var express             = require("express"),
+    app                 = express(),
+    bodyPaser           = require("body-parser"),
+    mongoose            = require("mongoose"),
+    passport            = require("passport"),
+    LocalStrategy       = require("passport-local"),
+    Campground          = require("./models/campground"),
+    Comment             = require("./models/comment"),
+    User                = require("./models/user"),
+    seedDB              = require("./seeds");
 
 seedDB();
 // mongodb setup
