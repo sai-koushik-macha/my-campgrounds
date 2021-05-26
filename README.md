@@ -1,2 +1,3 @@
-# Refactor The Routes
-* Use Express router to reoraginze all routes
+# Users + Comments
+* Associate users and comments
+* Save author's name to a comment automatically
