@@ -22,3 +22,8 @@
 # Delete Comments
 * Add Destroy route
 * Add Delete button
+
+# Authorization to Comments
+* Users can only edit his/her comments
+* Users can only delete his/her comments
+* Hide/Show edit and delete buttons
