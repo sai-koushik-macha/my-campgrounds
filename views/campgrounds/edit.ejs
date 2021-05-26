@@ -1,0 +1,30 @@
+<%- include('../partials/header') -%>
+
+<div class="container">
+    <h1>Edit <%= campground.name %></h1>
+    <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+        <div class="mb-3 row">
+            <div class="col-sm-10">
+                <input type="text" name="campground[name]" value="<%= campground.name %>">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-10">
+                <input type="text" name="campground[image]" value="<%= campground.image %>">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-10">
+                <input type="text" name="campground[description]" value="<%= campground.description %>">
+            </div>
+        </div>
+        <button>Submit!</button>
+    </form>
+    
+
+
+    <a href="/campgrounds">Go Back</a>
+</div>
+
+
+<%- include('../partials/footer') -%>
