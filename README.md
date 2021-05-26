@@ -13,3 +13,8 @@
 * Users can only edit his/her campgrounds
 * Users can only delete his/her campgrounds
 * Hide/Show edit and delete buttons
+
+# Editing Comments
+* Add Edit route for comments
+* Add Edit button
+* Add Update route
