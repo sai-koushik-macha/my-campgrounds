@@ -27,3 +27,4 @@
 * Users can only edit his/her comments
 * Users can only delete his/her comments
 * Hide/Show edit and delete buttons
+* Refactor Middleware
