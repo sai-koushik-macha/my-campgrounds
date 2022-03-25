@@ -1,3 +1,2 @@
-# Adding in Flash
-* Install and configure connect-flash
-* Add bootstrap alerts to header
+# My Campgrounds
+* A Web App for finding Beautiful Campgrounds.
